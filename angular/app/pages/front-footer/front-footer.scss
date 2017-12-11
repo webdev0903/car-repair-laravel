@@ -1,0 +1,106 @@
+@import "./angular/material/project";
+
+.Footer{
+    text-align: center;
+    background-color: $background;
+    border-top: 1px solid $border;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: $grey;
+    font-weight: 300;
+}
+
+.Footer-text{
+    padding-top: 10px;
+    opacity: 0.8;
+    color: $grey;
+}
+
+.Footer-link{
+    text-decoration: none;
+    color: $grey !important;
+    font-weight: 400;
+}
+
+.Footer-link:hover{
+    text-decoration: underline;
+}
+
+.Footer-logo{
+    width: 49px;
+    height: 46px;
+}
+
+.main-footer{
+    .copyright{
+        p{
+            font-size: 14px;
+            color: #637281;
+            padding: 20px 0;
+            padding-right: 100px;
+            span{
+                display: block;
+                font-size: 12px;
+            }
+        }
+        .social{
+            a{
+                display: inline-block;
+            }
+        }
+    }
+    .links{
+        padding-top: 30px;
+        h1{
+            font-size: 14px;
+            color: #637281;
+            padding-bottom: 10px;
+        }
+        a{
+            display: block;
+            font-size: 14px;
+            padding: 5px 0;
+            color: #637281;
+        }
+    }
+    .address{
+        padding-top: 30px;
+        h1{
+            font-size: 14px;
+            color: #637281;
+            padding-bottom: 10px;
+        }
+        span{
+            display: block;
+            font-size: 14px;
+            padding: 5px 0;
+            color: #637281;
+        }
+        span.email{
+            color: #14abf4;
+        }
+    }
+    @media screen and (max-width: 1139px){
+        .copyright{
+            width: 100%;
+            text-align: center;
+            p{
+                padding-right: 0 !important;
+            }
+        }
+        .links{
+            width: 50% !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            float: left !important;
+            text-align: center;
+        }
+        .address{
+            float: none !important;
+            clear: both !important;   
+            padding: 0 !important;
+            padding-top: 30px !important;   
+            text-align: center;
+        }
+    }
+}

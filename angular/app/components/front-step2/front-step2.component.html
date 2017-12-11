@@ -1,0 +1,186 @@
+<div class="front-main" id="step2-top">
+<section class="content" id="front-step2-page" style="padding: 0px !important; position: relative;">
+  <div class="front-step2-div1" style="width: 100%; min-height: 90vh; height: 100%; display: block; padding-bottom: 60px;">
+    <div class="front-step2-div2"></div>
+    <table width="100%" height="100%" style="min-height: 90vh">
+      <tr>
+        <td class="front-step2-td skin-blue">
+          <table>
+            <tr>
+              <td class="front-step2-td2">
+                <div class="col-lg-12">
+                  <table width="100%" height="100%">
+                    <tr>
+                      <td width="10%">
+                        <img src="/img/assets/back.png" alt="" ng-click="vm.goBack()" style="cursor:pointer"/>
+                      </td>
+                      <td width="90%" style="text-align: left;">
+                        <img style="width: 40px; display: inline-block; vertical-align: middle; margin-left: 10px; margin-right: 10px;" src="/img/assets/{{vm.mainService.image_url}}"/>
+                        <h4 style="display: inline-block; vertical-align: middle;" class="front-step2-h3 font-hn">{{vm.mainService.title}}</h4>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <section class="sidebar">
+                  <ul class="sidebar-menu">
+                    <li class="{{$index == vm.selectedSubServiceIndex ? 'active' : ''}}" ng-repeat="subService in vm.sub_services track by $index">
+                      <a style="cursor: pointer;" ng-click="vm.onSelectSubService(subService.id, $index)">
+                         <span class="font-hnLT" style="font-weight: bold">{{subService.title}}</span>
+                      </a>
+                    </li>
+                  </ul>
+                </section>
+              </td>
+            </tr>
+          </table>
+        </td>
+
+        <td class="center-td" style="vertical-align: top; position: relative; padding-top: 20px;">
+          <table width="100%" style="min-height: 250px;">
+            <tr>
+              <td></td>
+              <td class="center-td2" width="90%" style="background-color: #fff;min-height:250px;opacity: 0.99;vertical-align: top;" ng-show="vm.selectedSubService != undefined">
+                <div style="padding: 20px; box-sizing: border-box;">
+                  <table width="100%" height="100%">
+                    <tr>
+                      <td width="97%">
+                        <h5 class="font-hnLT" style="color: #6a7f90; font-weight: bold; font-size: 14px;">{{vm.selectedSubService.title}}  &nbsp;&nbsp;&nbsp;&nbsp;<font style="color: #3c8dbc;">AED {{vm.selectedSubService.price}}</font></h5>
+                      </td>
+                      <td width="3%">
+                        <a style="cursor: pointer;" ng-click="vm.addSubService(vm.selectedSubService.added)">
+                          <img src="/img/assets/{{vm.selectedSubService.added == 1 ? 'checked' : 'add'}}.png"/>
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
+                  <div style="background-color: lightgrey;height: 1px; margin-top: 10px; margin-bottom: 20px;"></div>
+                  <h6 style="color: #839db0; font-size: 12px;" class="font-hn">
+                    {{vm.selectedSubService.description}}
+                  </h6>
+                </div>
+              </td>
+              <td></td>
+            </tr>
+          </table>
+          <div style="position: absolute;bottom: 20px; width: 100%; text-align: center;">
+            <a ui-sref="front.step3" style="display: inline-block">
+              <div class="front-step2-div10">
+                Next
+              </div>
+            </a>
+          </div>
+        </td>
+
+        <td class="front-step2-td3" style="vertical-align: top; padding-top: 20px;" headers="100%">
+          <div class="front-step2-div6">
+            <div class="front-step2-div7">
+              <h5 class="font-hnLTbd" style="color: #fff;text-align: right; font-size: 12px;">Your Total Price</h5>
+              <table width="100%">
+                <tr>
+                  <td>
+                    <img style="margin-left: 10px;" src="/img/assets/summary.png"/>
+                  </td>
+                  <td style="vertical-align: top;">
+                    <h3 class="font-hnLTbd" style="color: #fff;text-align: right; font-size: 24px;">AED {{vm.totalPrice}}</h3>
+                  </td>
+                </tr>
+              </table>
+              <table width="100%">
+                <tr>
+                  <td width="120px"></td>
+                  <td>
+                    <h6 class="font-hnLTbd" style="color: #fff;text-align: left;margin: 0px; font-size: 12px;">Agency Price</h6>
+                  </td>
+                  <td>
+                    <h6 class="font-hnLTbd" style="color: #fff;text-align: left;margin: 0px; font-size: 12px;">AED {{vm.agencyPrice}}</h6>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="120px"></td>
+                  <td>
+                    <h6 class="font-hnLTbd" style="color: #fff;text-align: left;margin: 10px 0px 0px 0px; font-size: 12px;">You Save</h6>
+                  </td>
+                  <td>
+                    <h6 class="font-hnLTbd" style="color: #fff;text-align: left;margin: 10px 0px 0px 0px; font-size: 12px;">AED {{vm.save}}</h6>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="front-step2-div8">
+              <a ui-sref="front.step1">
+              <img src="/img/assets/add.png"/>&nbsp;&nbsp;&nbsp;Add More Service
+              </a>
+            </div>
+
+            <div class="front-step2-div9">
+              <h5>Summary</h5>
+              <h6 style="color: #839DB0">{{vm.car.year}}&nbsp;{{vm.car.make}}&nbsp;{{vm.car.model}}&nbsp;{{vm.car.trim}}</h6>
+              <h5 class="front-step2-h5" ng-show="vm.services.length > 0" style="padding-top: 15px;">Services</h5>
+              <div class="col-lg-12 front-step2-div11">
+                <table width="100%">
+                  <tr ng-repeat="service in vm.services">
+                    <td style="width: 45px;">
+                      <a style="cursor: pointer;" ng-click="vm.toggleSubService(service)"><img src="/img/assets/{{service.added == 1 ? 'toggle_on' : 'toggle_off'}}.png"/></a>
+                    </td>
+                    <td style="text-align: left;">
+                      <h6 style="color: #839DB0">{{service.title}}</h6>
+                    </td>
+                    <td style="text-align: right;width:60px;">
+                      <h6 style="color: #3c8dbc">AED {{service.price}}</h6>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+              <h5 class="front-step2-h5" ng-show="vm.optionServices.length > 0" style="padding-top: 15px;">Optional Services</h5>
+              <div class="col-lg-12 front-step2-div11">
+                <table width="100%">
+                  <tr ng-repeat="optionService in vm.optionServices">
+                    <td style="width: 45px;">
+                      <a style="cursor: pointer;" ng-click="vm.toggleOptionService(optionService)"><img src="/img/assets/{{optionService.added == 1 ? 'toggle_on' : 'toggle_off'}}.png"/></a>
+                    </td>
+                    <td style="text-align: left;">
+                      <h6 style="color: #839DB0">{{optionService.title}}</h6>
+                    </td>
+                    <td style="text-align: right;width:60px;">
+                      <h6 style="color: #3c8dbc">AED {{optionService.price}}</h6>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+              <h5 class="front-step2-h5">Include</h5>
+              <div class="col-lg-12 front-step2-div11">
+                <table width="100%">
+                  <tr ng-repeat="freeService in vm.freeServices">
+                    <td style="width: 75px;">
+                      <img src="/img/assets/free.png"/>
+                    </td>
+                    <td style="text-align: left;">
+                      <h6 style="color: #839DB0">{{freeService.title}}</h6>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+      
+  <div class="front-step2-tr">
+      <div class="col-lg-12 front-step2-div3">
+        <a ui-sref="front.step1"><span class="front-span-passed">&nbsp;</span></a>
+        <span class="front-span-active"><span class="triangle"></span>2</span>
+        <span class="front-span-deactive">3</span>
+        <span class="front-span-deactive">4</span>
+        <span class="front-span-deactive">5</span>
+      </div>
+  </div>
+</section>
+</div>

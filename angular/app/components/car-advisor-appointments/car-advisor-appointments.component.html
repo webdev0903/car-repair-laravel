@@ -1,0 +1,41 @@
+<section class="content-header">
+  <h1>Appointments</h1>
+  <ol class="breadcrumb">
+    <li><a ui-sref="app.landing"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a ui-sref="app.caradvisorlists">Service Advisors</a></li>
+    <li class="active">Appointments</li>
+  </ol>
+</section>
+<section class="content">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title">Service Advisors -> {{vm.advisor.data.name}}</h3>
+        </div>
+        
+        <div class="box-body table-responsive">
+          <table class="table table-hover">
+            <tr>
+              <th># NO</th>
+              <th>Customer Name</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Service Report</th>
+            </tr>
+            
+            <tr ng-repeat="appointment in vm.appointments" style="cursor: pointer;">
+              <td ui-sref="app.carappointmentdetail({appointmentId: {{appointment.id}}})">{{appointment.id}}</td>
+              <td ui-sref="app.carappointmentdetail({appointmentId: {{appointment.id}}})">{{appointment.name}} </td>
+              <td ui-sref="app.carappointmentdetail({appointmentId: {{appointment.id}}})">{{appointment.book_time}}</td>
+              <td ui-sref="app.carappointmentdetail({appointmentId: {{appointment.id}}})">{{appointment.status}}</td>
+              <td>
+              	<div ng-if="appointment.advisor != 0">{{appointment.advisor}}</div>
+                <a ng-if="appointment.report_id != 0" ui-sref="app.carappointmentreport({appointmentId: {{appointment.id}}})">See report info</a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

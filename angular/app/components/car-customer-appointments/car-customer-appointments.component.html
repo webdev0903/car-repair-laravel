@@ -1,0 +1,47 @@
+<section class="content-header">
+  <h1>Appointments</h1>
+  <ol class="breadcrumb">
+    <li><a ui-sref="app.landing"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a ui-sref="app.carcustomerlists">Customers</a></li>
+    <li class="active">Appointments</li>
+  </ol>
+</section>
+<section class="content">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title">Customers -> {{vm.customer.data.name}}</h3>
+        </div>
+        
+        <div class="box-body table-responsive">
+          <table class="table table-hover">
+            <tr>
+              <th>NO</th>
+              <th>Customer</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Status</th>
+              <th>Service Report</th>
+              <th>Receiving Form</th>
+            </tr>
+            
+            <tr ng-repeat="appointment in vm.appointments">
+              <td ui-sref="app.carappointmentdetail({appointmentId: {{appointment.id}}})">{{appointment.id}}</td>
+              <td ui-sref="app.carappointmentdetail({appointmentId: {{appointment.id}}})">{{appointment.name}} </td>
+              <td ui-sref="app.carappointmentdetail({appointmentId: {{appointment.id}}})">{{appointment.book_time1}}</td>
+              <td ui-sref="app.carappointmentdetail({appointmentId: {{appointment.id}}})">{{appointment.book_time2}}</td>
+              <td ui-sref="app.carappointmentdetail({appointmentId: {{appointment.id}}})">{{appointment.status}}</td>
+              <td>
+              	<div ng-if="appointment.advisor != 0">{{appointment.advisor}}</div>
+                <a ng-if="appointment.report_id != 0" ui-sref="special.reportform({reportId: {{appointment.report_id}}})">View Report</a></td>
+              <td>
+                <a ng-if="appointment.form_id != 0" ui-sref="special.acceptform({formId: {{appointment.report_id}}})">View Form</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

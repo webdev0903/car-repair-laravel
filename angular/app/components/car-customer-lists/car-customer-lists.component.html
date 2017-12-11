@@ -1,0 +1,36 @@
+<section class="content-header">
+  <h1>Customers</h1>
+  <ol class="breadcrumb">
+  	<li><a ui-sref="app.landing"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="active">Customers</li>
+  </ol>
+</section>
+<section class="content">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title">All Customers</h3>
+        </div>
+        
+        <div class="box-body table-responsive">
+          <table class="table table-hover">
+            <tr>
+              <th>Customer</th>
+              <th>Mobile</th>
+              <th>Open Appointments</th>
+              <th>Total</th>
+            </tr>
+            
+            <tr ng-repeat="customer in vm.customers" ui-sref="app.carcustomerappointments({customerId: {{customer.id}}})" style="cursor: pointer">
+              <td>{{customer.name}}</td>
+              <td>{{customer.phone_number}}</td>
+              <td>{{customer.open}}</td>
+              <td>{{customer.total}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

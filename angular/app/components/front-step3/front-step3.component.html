@@ -1,0 +1,85 @@
+<div class="front-main" id="step3-top">
+<section class="content" id="front-step3-page" style="padding: 0px !important; position: relative;">
+  <div class="front-step3-div2"></div>
+  <table style="width: 100%; height: auto;">
+    <tr>
+      <td>
+        <div class="front-step3-div1">
+          <table width="100%" height="100%">
+            <tr>
+              <td>
+                <div class="front-step3-div4">
+                  <div class="col-lg-12 clearfix" style="text-align: center; ">
+                    <br/> 
+                    <h4 class="front-step3-h4 font-hnLTl">Select Date & Time</h4>
+                    <br/>
+                    <h5 class="font-hnLT" style="color: #6a7f90; font-size: 14px; font-weight: bold;">Select new date of your appointment</h5>
+
+                    <datepicker date-format="MMMM dd, yyyy" date-min-limit="{{vm.minDate}}" date-max-limit="{{vm.maxDate}}" datepicker-mobile="false">
+                      <input ng-model="vm.date" class="front-step3-date" type="text" placeholder="MMMM dd, yyyy" ng-change="vm.changeDate()"/>
+                    </datepicker>
+                    <!--<h5 style="color: #6A7F90;">Select new time of your appointment</h5>
+                    <input type="number" class="front-step3-time" placeholder="Hour" value="" min="0" max="23"/>&nbsp;&nbsp;:&nbsp;
+                    <input type="number" class="front-step3-time" placeholder="Minute" value="" min="0" max="59"/>-->
+                  </div>
+                  <div class="customClear"></div>
+                  <div id="time-pack" class="col-lg-12 clearfix">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8 clearfix">
+                      <div class="col-md-3" style="padding: 5px !important;" ng-repeat="time in vm.timesheets" ng-show="time.selected != 2">
+                          <div class="{{time.selected == 1 ? 'front-step3-timediv-selected' : 'front-step3-timediv'}}" ng-click="vm.onSelectTimeSheet(time)">
+                          {{time.title}}
+                          </div>
+                      </div>
+
+                    </div>
+                    <div class="col-lg-2"></div>
+                  </div>
+                  <div class="customClear"></div>
+                  <div style="height: 60px;width: 100%;">
+                    <table width="100%" height="100%">
+                      <tr>
+                        <td width="30%">
+                        </td>
+                        <td>
+                          <a ui-sref="front.step2">
+                            <div class="front-step3-div6">
+                              Back
+                            </div>
+                          </a>
+                        </td>
+                        <td>&nbsp;&nbsp;</td>
+                        <td>
+                          <a ng-click="vm.onNext()" style="cursor: pointer;">
+                            <div class="front-step3-div5">
+                              Next
+                            </div>
+                          </a>
+                        </td>
+                        <td width="30%">
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+    <tr class="front-step3-tr">
+      <td style="display: block;">
+        <div class="col-lg-12 clearfix front-step3-div3">
+          <a ui-sref="front.step1"><span class="front-span-passed">&nbsp;</span></a>
+          <a ui-sref="front.step2"><span class="front-span-passed">&nbsp;</span></a>
+          <span class="front-span-active"><span class="triangle"></span>3</span>
+          <span class="front-span-deactive">4</span>
+          <span class="front-span-deactive">5</span>
+        </div>
+        <div class="customClear"></div>
+      </td>
+    </tr>
+  </table> 
+</section>
+</div>

@@ -1,0 +1,168 @@
+<section class="content">
+  <div class="front-accept-form">
+    <img id="logo" src="img/assets/logo.png"/>
+    <h1 class="title letterSpacing font-hnl">Gargash Auto Body</h1>
+    <p class="subtitle letterSpacing font-hnl">Vehicle Receiving Form</p>
+    <form>
+      <div class="top-row clearfix">
+        <div class="col-md-4">
+          <div class="col-md-10 col-md-offset-1">
+            <span class="font-hnLT font-bold">Job No</span>
+            <label class="font-hnLT">{{vm.data.jobno}}</label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-10 col-md-offset-1">
+            <span class="font-hnLT font-bold">Date</span>
+            <label class="font-hnLT">{{vm.data.date}}</label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-10 col-md-offset-1">
+            <span class="font-hnLT font-bold">Time</span>
+            <label class="font-hnLT">{{vm.data.time}}</label>
+          </div>
+        </div>
+      </div> <!-- Top Row End !-->
+      <div class="row middle-row">
+        <div class="col-md-4">
+          <div class="col-md-10 col-md-offset-1">
+            <span class="font-hnLT font-bold">Customer</span>
+            <label class="font-hnLT">{{vm.data.customer}}</label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-10 col-md-offset-1">  
+            <span class="font-hnLT font-bold">VIN</span>
+            <label class="font-hnLT">{{vm.data.vin}}</label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-10 col-md-offset-1">
+            <span class="font-hnLT font-bold">Advisor</span>
+            <label class="font-hnLT">{{vm.data.advisor}}</label>
+          </div>
+        </div>
+      </div> <!-- Row End !-->
+      <div class="row middle-row">
+        <div class="col-md-4">
+          <div class="col-md-10 col-md-offset-1">  
+            <span class="font-hnLT font-bold">Telephone</span>
+            <label class="font-hnLT">{{vm.data.telephone}}</label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-10 col-md-offset-1">
+            <span class="font-hnLT font-bold">Model/Year</span>
+            <label class="font-hnLT">{{vm.data.model}}</label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-10 col-md-offset-1">  
+            <span class="font-hnLT font-bold">KM</span>
+            <label class="font-hnLT">{{vm.data.km}}</label>
+          </div>
+        </div>
+      </div> <!-- Row End !-->
+      <div class="row middle-row">
+        <div class="col-md-4">
+          <div class="col-md-10 col-md-offset-1">
+            <span class="font-hnLT font-bold">Email Id</span>
+            <label class="font-hnLT">{{vm.data.email}}</label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-10 col-md-offset-1">
+            <span class="font-hnLT font-bold">Plate No</span>
+            <label class="font-hnLT">{{vm.data.plate}}</label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-10 col-md-offset-1">
+            <span class="font-hnLT font-bold">Fuel Leave</span>
+            <label class="font-hnLT">{{vm.data.fuel}}</label>
+          </div>
+        </div>
+      </div> <!-- Row End !-->
+      <hr/>
+      <div class="row request-row">
+        <div class="col-md-6">
+          <img src="img/assets/shape1.png" alt=""/>
+          <span class="font-hn">Primary Request</span>
+          <p class="font-hnLT">{{vm.data.primaryreq}}</p>
+        </div>
+        <div class="col-md-6">
+          <img src="img/assets/shape2.png" alt=""/>
+          <span class="font-hn">Secondary Request</span>
+          <p class="font-hnLT">{{vm.data.secondaryreq}}</p>
+        </div>
+      </div> <!-- Row End !-->
+      <hr/>
+      <div class="row inspection">
+        <h3 class="font-hnLT font-bold">Vehicle Inspection Report</h3>
+        <div class="clearfix">
+          <div class="col-md-3 clearfix" ng-repeat="inspection in vm.inspection" style="position: relative;">
+            <input type="checkbox" ng-checked="vm.checked_inspection.indexOf(inspection.id) > -1" value="{{inspection.id}}" disabled="disabled" />
+            <span class="font-hnLT font-bold">{{inspection.title}}</span>
+          </div>
+        </div>
+      </div> <!-- Inspection End !-->
+      <hr/>
+      <div class="row upload">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="btn-wrap">
+              <img src="{{vm.data.file[0]}}" alt="" class="upload_image" id="image0"/>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="btn-wrap">
+              <img src="{{vm.data.file[1]}}" alt="" class="upload_image" id="image1"/>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="btn-wrap">
+              <img src="{{vm.data.file[2]}}" alt="" class="upload_image" id="image2"/>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="btn-wrap">
+              <img src="{{vm.data.file[3]}}" alt="" class="upload_image" id="image3"/>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="btn-wrap">
+              <img src="{{vm.data.file[4]}}" alt="" class="upload_image" id="image4"/>
+            </div>
+          </div>
+        </div>
+        <p class="font-hn">We kindly request that variables should not to be left insde the vehicle</p>
+      </div> <!-- Upload End !-->
+      <hr/>
+      <div class="row sign">
+        <div class="col-md-6">
+          <div class="row">
+            <img src="img/assets/head.png" alt=""/>
+            <div class="signpack">
+              <span class="font-hn">Customer/Representative Signature</span>
+              <img src="{{vm.data.sign1}}" alt=""/>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <img src="img/assets/head.png" alt=""/>
+            <div class="signpack">
+              <span class="font-hn">Service Advisor Signature</span>
+              <img src="{{vm.data.sign2}}" alt=""/>
+            </div>
+          </div>
+        </div>
+      </div> <!-- Sign End !-->
+    </form> <!-- Form End !-->
+  </div>
+</section>

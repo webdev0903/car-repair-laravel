@@ -1,0 +1,48 @@
+<section class="content-header">
+  <h1>Optional Services</h1>
+  <ol class="breadcrumb">
+    <li><a ui-sref="app.landing"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="active">Optional Services</li>
+  </ol>
+</section>
+<section class="content">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title">Optional Services</h3>
+          <div class="box-tools pull-right">
+            <a ui-sref="app.caroptionserviceadd" class="btn btn-block btn-success btn-xs"><i class="fa fa-plus"></i> Add New</a>
+          </div>
+        </div>
+        
+        <div class="box-body table-responsive">
+          <table class="table table-hover">
+            <tr>
+              <th>Services</th>
+              <th>Price</th>
+              <th>Type</th>
+              <th>Edit</th>
+            </tr>
+            
+            <tr ng-repeat="option_service in vm.option_services">
+              <td style="line-height: 26px">{{option_service.title}} </td>
+              <td style="line-height: 26px">{{option_service.price}} </td>
+              <td style="line-height: 26px">{{option_service.type == 1 ? 'Optional' : 'Free'}} </td>
+              <td style="line-height: 26px">
+                  <a class="btn btn-xs btn-warning" ui-sref="app.caroptionserviceedit({serviceId: {{option_service.id}}})">
+                      <i class="fa fa-edit"></i>
+                  </a>
+                  &nbsp;
+                  <button class="btn btn-xs btn-danger" ng-click="vm.delete(option_service.id)">
+                      <i class="fa fa-trash-o"></i>
+                  </button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>

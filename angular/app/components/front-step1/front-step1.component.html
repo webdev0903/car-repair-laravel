@@ -1,0 +1,68 @@
+<div class="front-main" id="step1-top">
+<section class="content" style="padding: 0px !important;">
+  <table style="width: 100%; height: 100%;">
+    <tr>
+      <td>
+        <div class="front-step1-div1">
+          <div class="front-step1-div2"></div>
+          <div class="col-lg-12 front-step1-div4">
+            <br/>
+            <h3 class="front-step1-h3 font-hnLTl">Select Services</h3>
+          </div>
+          <div class="front-step1-div5">
+            <span class="front-step1-span-service" ng-repeat="service in vm.main_services track by $index" ng-if="$index < 4">
+              <a ng-click="vm.onNext(service.id, service.title, service.image_url)">
+                <table style="width: 100%; height: 100%;">
+                  <tr width="100%" height="50%" style="vertical-align: bottom;">
+                    <td>
+                      <img src="/img/assets/{{service.image_url}}"/>
+                    </td>
+                  </tr>
+                  <tr width="100%" height="50%">
+                    <td class="font-hn front-step1-title">
+                      {{service.title}}
+                    </td>
+                  </tr>
+                </table>
+              </a>
+            </span>
+          </div>
+
+          <div class="front-step1-div5" ng-if="vm.main_services.length > 4">
+            <span class="front-step1-span-service" ng-repeat="service in vm.main_services track by $index" ng-if="$index >= 4">
+              <a ng-click="vm.onNext(service.id, service.title, service.image_url)">
+                <table style="width: 100%; height: 100%;">
+                  <tr width="100%" height="50%" style="vertical-align: bottom;">
+                    <td>
+                      <img src="/img/assets/{{service.image_url}}"/>
+                    </td>
+                  </tr>
+                  <tr width="100%" height="50%">
+                    <td class="font-hn front-step1-title">
+                      {{service.title}}
+                    </td>
+                  </tr>
+                </table>
+              </a>
+            </span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr class="front-step1-tr">
+      <td>
+        <div class="col-lg-12 front-step1-div3">
+          <span class="front-span-active">
+            <span class="triangle"></span>
+            1
+          </span>
+          <span class="front-span-deactive">2</span>
+          <span class="front-span-deactive">3</span>
+          <span class="front-span-deactive">4</span>
+          <span class="front-span-deactive">5</span>
+        </div>
+      </td>
+    </tr>
+  </table> 
+</section>
+</div>

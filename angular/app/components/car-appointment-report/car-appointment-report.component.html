@@ -1,0 +1,137 @@
+<script type="text/ng-template" id="modalContent.html">
+  <div class="modal-header">
+    <h3 class="modal-title">Service List</h3>
+  </div>
+  <div class="modal-body">
+    <div class="row modal-services clearfix">
+      <div class="modal-service col-md-6" ng-repeat="service in mvm.services">
+        <h1 class="font-hn">{{service.title}}<img src="img/assets/{{service.selected == 1 ? 'checked' : 'add'}}.png" alt="" ng-click="mvm.onSelectService(service)"/></h1>
+        <span class="font-hnLT">AED {{service.price}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="mvm.ok()">Add</button>
+    <button class="btn btn-warning" type="button" ng-click="mvm.cancel()">Cancel</button>
+  </div>
+</script>
+<section class="content">	
+  <div class="report-form">
+    <form ng-submit="vm.report(vm.reportForm.$valid)" method="post" name="vm.reportForm">
+    <h1 class="title font-hnLTl letterSpacing">Inspection Report for {{vm.accept.model}}</h1>
+    <div class="tab-nav" ng-init="show=false">
+      <span ng-class="show==true?'active font-hn':'font-hnl'" ng-click="show=true">Recommendations</span>
+      <span ng-class="show==false?'active font-hn':'font-hnl'" ng-click="show=false">Report</span>
+    </div><!-- Tab Nav End !-->
+    <div ng-show="show" class="recommendation-tab">
+      <div class="row intro">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="col-md-4">
+            <div class="one-circle poor"></div>
+            <span class="font-hnLT font-bold">Urgent</span>
+          </div>
+          <div class="col-md-4">
+            <div class="one-circle fair"></div>
+            <span class="font-hnLT font-bold">Required</span>
+          </div>
+          <div class="col-md-4">
+            <div class="one-circle good"></div>
+            <span class="font-hnLT font-bold">Recommended</span>
+          </div>
+        </div>
+      </div><!-- Intro End !-->
+      <hr/>
+      <div class="row add-service">
+        <p ng-click="vm.showModal()">Add Service<img src="img/assets/add.png" alt=""/></p>
+      </div> <!-- Add Service End !-->
+      <div class="row services">
+        <div class="col-md-4 one-service" ng-repeat="service in vm.selected_service" ng-show="{{service.selected==1?true:false}}">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="customLeft">
+              <div class="one-circle {{service.class1}}" ng-click="vm.onSelectStatus(service,1)"></div>
+              <div class="one-circle {{service.class2}}" ng-click="vm.onSelectStatus(service,2)"></div>
+              <div class="one-circle {{service.class3}}" ng-click="vm.onSelectStatus(service,3)"></div>
+            </div>
+            <h1 class="customLeft font-hn">{{service.title}}</h1>
+            <img src="img/assets/checked.png" alt="" ng-click="vm.onRemoveService(service)"/>
+            <div class="customClear"></div>
+            <p class="font-hn">{{service.description}}</p>
+            <span class="font-hnLT">AED {{service.price}}</span>
+          </div>
+        </div>
+      </div><!-- Services End !-->
+      <hr/>
+      <div class="row total">
+        <p class="font-hnl">YOUR TOTAL PRICE</p>
+        <span class="font-hn">{{vm.total}} AED</span>
+      </div>
+    </div><!-- Recommendation Tab End !-->
+    <div ng-hide="show" class="report-tab">
+      <div class="row score">
+        <div class="col-md-4 col-md-offset-4">
+          <h1 class="font-hnLTl">Score</h1>
+          <input type="text" ng-model="vm.score" ng-required="true" class="form-control"/>
+        </div>
+      </div> <!-- Score End !-->
+      <div class="row intro">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="col-md-4">
+            <div class="one-circle poor"></div>
+            <div class="one-circle"></div>
+            <div class="one-circle"></div>
+            <span class="font-hnLT font-bold">Poor</span>
+          </div>
+          <div class="col-md-4">
+            <div class="one-circle fair"></div>
+            <div class="one-circle fair"></div>
+            <div class="one-circle"></div>
+            <span class="font-hnLT font-bold">Fair</span>
+          </div>
+          <div class="col-md-4">
+            <div class="one-circle good"></div>
+            <div class="one-circle good"></div>
+            <div class="one-circle good"></div>
+            <span class="font-hnLT font-bold">Good</span>
+          </div>
+        </div>
+      </div> <!-- Intro End !-->
+      <hr/>
+      <div class="row one-aspect" ng-repeat="aspect in vm.report_aspect">
+        <div class="col-md-10 col-md-offset-1 clearfix">
+          <div class="one-aspect-header clearfix">
+            <h1 class="customLeft font-hnl">{{aspect.title}}</h1>
+            <div class="customRight circle-box" ng-init="count=aspect.status; click=aspect.status">
+              <div class="one-circle" ng-mouseleave="count=click" ng-mouseover="count=1" ng-class="{poor:count==1, fair:count==2, good:count==3}" ng-click="click=1; aspect.status=click"></div>
+              <div class="one-circle" ng-mouseleave="count=click" ng-mouseover="count=2" ng-class="{good:count==3,fair:count==2,'':count==1}" ng-click="click=2; aspect.status=click"></div>
+              <div class="one-circle" ng-mouseleave="count=click" ng-mouseover="count=3" ng-class="count==3?'good':''" ng-click="click=3; aspect.status=click"></div>
+            </div>
+          </div><!-- One Aspect Header End !-->
+          <table ng-repeat="detail in aspect.detail">
+            <thead>
+              <tr>
+              <th class="font-hnl">{{detail.heading}}</th>
+              <th class="font-hnl">POOR</th>
+              <th class="font-hnl">FAIR</th>
+              <th class="font-hnl">GOOD</th>
+              <th class="font-hnl">NOTES &amp; ADVICE FROM MECHANIC</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="sub in detail.sub">
+                <td class="font-hnl" width="25%">{{sub.title}}</td>
+                <td class="font-hnl" width="10%" align="center"><div class="one-circle" ng-class="sub.status==1?'poor':''" ng-click="sub.status=1"></div></td>
+                <td class="font-hnl" width="10%" align="center"><div class="one-circle" ng-class="sub.status==2?'fair':''" ng-click="sub.status=2"></div></td>
+                <td class="font-hnl" width="10%" align="center"><div class="one-circle" ng-class="sub.status==3?'good':''" ng-click="sub.status=3"></div></td>
+                <td class="font-hnl"><textarea class="form-control" ng-model="sub.note"></textarea></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div><!-- One Aspect End !-->
+    </div><!-- Report Tab End !-->
+    <div class="row">
+      <button type="submit" class="btn btn-primary font-hnbd">Send Report</button>
+    </div>
+    </form> <!-- Form End !-->
+  </div> <!-- Report Form End !-->
+</section>

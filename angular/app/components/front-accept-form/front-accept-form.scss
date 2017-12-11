@@ -1,0 +1,227 @@
+.front-accept-form{
+	h1.title{
+		color: #2a2f23;
+		text-align: center;
+		font-size: 36px;
+		font-weight: normal !important;
+	}
+	p.subtitle{
+		text-align: center;
+		color: #6a7f90;
+		font-size: 24px;
+	}
+	form{
+		margin-top: 60px;
+		span{
+			color: #2a2f3a;
+			font-size: 16px;
+		}
+	}
+	.row{
+		margin-right: 0 !important;
+		margin-left: 0 !important;
+	}
+	padding: 20px;
+	background-color: #fff;
+	box-sizing: border-box;
+	width: 90%;
+	margin: 0 auto;
+
+	img#logo{
+		display: block; 
+		margin: 20px auto 30px auto;
+	}
+	.top-row{
+		width: 80%;
+		margin: 0 auto;
+
+		.col-md-4{
+			margin-bottom: 50px;
+		}
+		span, label{
+			display: inline-block !important;
+			box-sizing: border-box !important;
+			margin: 0 !important;
+		}
+		span{
+			width: 40% !important;
+		}
+		label{
+			width: 55% !important;
+		}
+
+		@media screen and (max-width: 959px){
+			width: 100% !important;
+			span{
+				width: 100% !important;
+				text-align: center !important;
+			}
+			label{
+				width: 100% !important;
+				text-align: center !important;
+			}
+			input{
+				width: 100% !important;
+			}
+		}
+	}
+	.middle-row{
+		span{
+			color: #78909c;
+			font-size: 12px;
+		}
+		@media screen and (max-width: 959px){
+			width: 100% !important;
+			span{
+				width: 100% !important;
+				text-align: center !important;
+			}
+			label{
+				width: 100% !important;
+				text-align: center !important;
+			}
+		}
+	}
+	.request-row{
+		span{
+			color: #2a2f3a;
+			font-size: 24px;
+			padding-top: 10px;
+		}
+		.col-md-6:first-child{
+			border-right: 1px solid #efefef;
+		}
+		.col-md-6{
+			text-align: center;
+
+			p{
+				display: block;
+				width: 80%;
+				height: 400px;
+				margin: 20px auto;
+				border-radius: 3px;
+				resize: none;
+			}
+		}
+	}
+	.clearfix:after{
+		content: '';
+		display: block;
+		clear: both;
+	}
+	.row{
+		.col-md-4{
+			margin-bottom: 30px;
+		}
+		span{
+			display: block !important;
+			margin-bottom: 5px !important;
+		}
+	}
+	.inspection{
+		input[type="checkbox"]{
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		h3{
+			font-size: 16px;
+			color: #2a2f3a;
+			text-align: center;
+			padding-bottom: 40px;
+		}
+		span{
+			color: #78909c;
+			font-size: 14px;
+			display: block;
+			padding-left: 10px;
+		}
+		.col-md-3{
+			margin-bottom: 20px;
+		}
+		@media screen and (max-width: 737px){
+			span{
+				text-align: center !important;
+			}
+		}
+	}
+	.upload{
+		.image{
+			width: 100%;
+			margin: 20px 0;
+			img{
+				display: block;
+				width: 100%;
+			}
+		}
+		.btn-wrap{
+			height: auto;
+			display: block;
+			margin: 40px 30px;
+			box-sizing: border-box;
+			img.upload_image{
+				width: 100%;
+				height: 100%;
+				display: block;
+			}
+		}
+		p{
+			color: #2a2f3a;
+			font-size: 16px;
+			padding: 40px 20px 20px 20px;
+		}
+	}
+
+	.sign{
+		.row{
+			img{
+				display: block;
+				float: left;
+				width: 25px; 
+				height: 25px;
+				margin-right: 10px;
+			}
+			.signpack{
+				float: left;
+				span{
+					line-height: 25px;
+					color: #2a2f3a;
+					font-size: 16px;
+				}
+				img{
+					width: 100%;
+					height: auto;
+					margin: 0;
+				}
+			}
+			.signbutton{
+				margin-top: 20px;
+			}
+		}
+		.signature{
+			display: block;
+			border: 1px solid #efefef;
+			margin-top: 20px;
+		}
+		@media screen and (max-width: 959px){
+			.row{
+				img{
+					float: none !important;
+					margin: 0 auto !important;
+					width: auto !important;
+					max-width: 100% !important;
+				}
+				.signpack{
+					float: none !important;
+					span{
+						text-align: center;
+					}
+					.signature{
+						margin: 0 auto !important;
+					}
+				}
+			}
+		}
+	}
+}

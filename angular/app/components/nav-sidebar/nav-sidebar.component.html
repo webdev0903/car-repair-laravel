@@ -1,0 +1,50 @@
+<aside class="main-sidebar">
+  <section class="sidebar">
+    <ul class="sidebar-menu">
+      <li class="{{vm.selectedNav == 0 ? 'active' : ''}}">
+        <a ng-click="vm.changeNav('app.carappointmentlists', 0)" ng-show="vm.can('manage.users')">
+          <i class="fa fa-dashboard"></i> <span>Appointments</span>
+        </a>
+      </li>
+
+      <li class="{{vm.selectedNav == 1 ? 'active' : ''}}">
+        <a ng-click="vm.changeNav('app.carservicelists', 1)" ng-show="vm.can('manage.permissions')">
+          <i class="fa fa-shopping-cart"></i> <span>Services</span>
+        </a>
+      </li>
+
+      <li class="{{vm.selectedNav == 2 ? 'active' : ''}}">
+        <a ng-click="vm.changeNav('app.caroptionservicelists', 2)" ng-show="vm.can('manage.permissions')">
+          <i class="fa fa-shopping-basket"></i> <span>Optional Services</span>
+        </a>
+      </li>
+            
+      <li class="{{vm.selectedNav == 3 ? 'active' : ''}}">
+        <a ng-click="vm.changeNav('app.caradvisorlists', 3)" ng-show="vm.can('manage.permissions')">
+          <i class="fa fa-user"></i> <span>Service Advisors</span>
+        </a>
+      </li>
+
+      <li class="{{vm.selectedNav == 4 ? 'active' : ''}}">
+        <a ng-click="vm.changeNav('app.carcustomerlists', 4)" ng-show="vm.can('manage.permissions')">
+          <i class="fa fa-users"></i> <span>Customers</span>
+        </a>
+      </li>
+
+      <li class="{{vm.selectedNav == 5 ? 'active' : ''}}">
+        <a ng-click="vm.changeNav('app.profile', 5)" ng-show="vm.can('manage.permissions')">
+          <i class="fa fa-cog"></i> <span>Settings</span>
+        </a>
+      </li>
+            
+      <!--<li class="treeview" ng-show="vm.can('manage.permissions')">
+        <a href="javascript:void(0)">
+          <i class="fa fa-users"></i> <span>Users</span> <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li ng-show="vm.can('manage.users')" class="active"><a ui-sref='app.userlist'><i class="fa fa-circle-o"></i> <span>User List</span></a></li>
+        </ul>
+      </li>-->
+    </ul>
+  </section>
+</aside>

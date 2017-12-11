@@ -1,0 +1,205 @@
+<div id="main-home">
+  <div class="front-main">
+  <section class="content">
+    <div class="home-try-div-con">
+      <h2 class="font-hnl">A new approach to repairing cars.</h2>
+      <a ui-sref="front.whatcar" class="font-hnLTbd">BOOK NOW</a>
+      <div class="customClear"></div>
+    </div>
+  </section>
+  </div>
+  <div class="row top-intro clearfix" id="why-us">
+    <div class="col-md-10 col-md-offset-1 clearfix">
+      <div class="col-md-4">
+        <img src="img/assets/intro1.png" alt=""/>
+        <h1 class="font-hnl">WE MAKE IT EASY</h1>
+        <p class="font-hn">Get an estimate and book a service online 24/7. Our fast repair servie brings the garage to you, whilist the pick and drop makes your life hassle free.</p>
+      </div>
+      <div class="col-md-4">
+        <img src="img/assets/intro2.png" alt=""/>
+        <h1 class="font-hnl">FAIR AND TRANSPARENT PRICING</h1>
+        <p class="font-hn">We offer fair and transparent pricing and provide estimates upfront for hundreds of services on thousands of cars. Book with confidence.</p>
+      </div>
+      <div class="col-md-4">
+        <img src="img/assets/intro3.png" alt=""/>
+        <h1 class="font-hnl">HAPPINESS GUARANTEED</h1>
+        <p class="font-hn">We only hire speciallized and trained mechanics. All services are backed by our 12-month / 15,000 KM warranty.</p>
+      </div>
+    </div>
+  </div> <!-- Top Intro End !-->
+  <div class="row device clearfix" id="how-it-works">
+    <div class="col-md-6"><img src="img/assets/ipad.jpg" alt="" class="ipad"/></div>
+    <div class="col-md-6">
+      <div class="col-md-10 col-md-offset-1">
+      <h1 class="font-hnl">Enjoy the first digital auto repair and maintenance experience in the world</h1>
+      <ul>
+        <li class="clearfix">
+          <div class="number font-hnl">1</div>
+          <h2 class="font-hn">BOOK APPOINTMENT</h2>
+          <p class="font-hn">Tell us what your car needs or ask for a diagnostic. Receive a free, fast, fair &amp; transparent price.</p>
+        </li>
+        <li class="clearfix">
+          <div class="number font-hnl">2</div>
+          <h2 class="font-hn">SELECT SERVICES</h2>
+          <p class="font-hn">Pic your services from out list, choose a date and time, and bring your car after confirmation. That’s it, no more waiting in repair shops. </p>
+        </li>
+        <li class="clearfix">
+          <div class="number font-hnl">3</div>
+          <h2 class="font-hn">DIGITAL REPORTS</h2>
+          <p class="font-hn">We send a digital report information you about the car, 100% transparency and advice on what’s best.</p>
+          <a class="try-button font-hn" ng-href="/#/whatcar#top">EXPERIENCE NOW</a>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </div> <!-- Device End !-->
+  <div class="row clearfix service" id="services">
+    <h1 class="font-hnl">Pick A Service</h1>
+    <div class="front-step1-div5">
+      <span class="front-step1-span-service" ng-repeat="service in vm.main_services track by $index" ng-if="$index < 4">
+        <a ng-href="/#/whatcar#top">
+          <table style="width: 100%; height: 100%;">
+            <tr width="100%" height="50%" style="vertical-align: bottom;">
+              <td>
+                <img src="/img/assets/{{service.image_url}}"/>
+              </td>
+            </tr>
+            <tr width="100%" height="50%">
+              <td class="font-hn">
+                {{service.title}}
+              </td>
+            </tr>
+          </table>
+        </a>
+      </span>
+    </div> <!-- Front Step1 Div 5 !-->
+    <div class="front-step1-div5" ng-if="vm.main_services.length > 4">
+      <span class="front-step1-span-service" ng-repeat="service in vm.main_services track by $index" ng-if="$index >= 4">
+        <a ng-href="/#/whatcar#top">
+          <table style="width: 100%; height: 100%;">
+            <tr width="100%" height="50%" style="vertical-align: bottom;">
+              <td>
+                <img src="/img/assets/{{service.image_url}}"/>
+              </td>
+            </tr>
+            <tr width="100%" height="50%">
+              <td class="font-hn">
+                {{service.title}}
+              </td>
+            </tr>
+          </table>
+        </a>
+      </span>
+    </div> <!-- Front Step1 Div 5 !-->
+  </div> <!-- Service End !-->
+  <div class="row" ng-init="testimonial=1" id="customers">
+  <div class="row clearfix discuss">
+    <div class="discuss-inner">
+      <div ng-show="testimonial==1?true:false">
+        <p class="font-hn"><i>“Moving away from agency maintenance seemed impossible until I came across Autobody. With customer experience at the heart of what they do, they’ve kept my car in shape and ensured transparency. Their new digital experience is revolutionary!”</i></p>
+        <label class="font-hn">Linda Parker</label>
+      </div>
+      <div ng-show="testimonial==2?true:false">
+        <p class="font-hn"><i>“I’ve been coming to Autobody for all my car needs. They’ve got exceptional service, original spare parts and quality of work; the best I’ve seen by a garage in 20 years of living in Dubai.”</i></p>
+        <label class="font-hn">Hadi Yousef</label>
+      </div>
+      <div ng-show="testimonial==3?true:false">
+        <p class="font-hn"><i>“If you own a Mercedes G63 AMG, you know it’s more than a mode of transport. Autobody makes my life worry free, with a fantastic pick and drop service and quality mechanics, I no longer think about maintenance.”</i></p>
+        <label class="font-hn">John Law</label>
+      </div>
+      <div ng-show="testimonial==4?true:false">
+        <p class="font-hn"><i>“I live a hassle-free life when it comes to my car thanks to Autobody. They keep me on top of things with their new recommended services and digital report; it’s such a brilliant way of ensuring transparency and convenience for customers.”</i></p>
+        <label class="font-hn">Rachel Philip</label>
+      </div>
+      <div ng-show="testimonial==5?true:false">
+        <p class="font-hn"><i>“Owning a car becomes easier because of the world class services provided by Autobody. They pick my car from home, complete the service, send me a comprehensive report to review, recommend additional work and bring it back home.”</i></p>
+        <label class="font-hn">Jeremy King</label>
+      </div>
+    </div> <!-- Discuss Inner End !-->
+  </div> <!-- Discuss End !-->
+  <div class="row clearfix testimonial">
+    <div class="discuss-box">
+      <div class="one-discuss">
+        <img src="img/assets/discuss1.png" alt="" ng-click="testimonial=1"/>
+      </div>
+      <div class="one-discuss">
+        <img src="img/assets/discuss2.png" alt="" ng-click="testimonial=2"/>
+      </div>
+      <div class="one-discuss">
+        <img src="img/assets/discuss3.png" alt="" ng-click="testimonial=3"/>
+      </div>
+      <div class="one-discuss">
+        <img src="img/assets/discuss4.png" alt="" ng-click="testimonial=4"/>
+      </div>
+      <div class="one-discuss">
+        <img src="img/assets/discuss5.png" alt="" ng-click="testimonial=5"/>
+      </div>
+    </div> <!-- Discuss Box End !-->
+  </div> <!-- Testimonial End !-->
+  </div>
+  <div class="row clearfix company">
+    <p class="font-lb">WORKING ON THE WORLD’S MOST PRESTIGIOUS AUTOMOTIVE COMPANIES</p>
+    <div class="col-md-10 clearfix col-md-offset-1">
+      <div class="col-md-2">
+        <img src="img/assets/car-logo1.png" alt=""/>
+      </div>
+      <div class="col-md-2">
+        <img src="img/assets/car-logo2.png" alt=""/>
+      </div>
+      <div class="col-md-2">
+        <img src="img/assets/car-logo3.png" alt=""/>
+      </div>
+      <div class="col-md-2">
+        <img src="img/assets/car-logo4.png" alt=""/>
+      </div>
+      <div class="col-md-2">
+        <img src="img/assets/car-logo5.png" alt=""/>
+      </div>
+      <div class="col-md-2">
+        <img src="img/assets/car-logo6.png" alt=""/>
+      </div>
+    </div>
+    <div class="col-md-10 clearfix col-md-offset-1">
+      <div class="col-md-2">
+        <img src="img/assets/car-logo7.png" alt=""/>
+      </div>
+      <div class="col-md-2">
+        <img src="img/assets/car-logo8.png" alt=""/>
+      </div>
+      <div class="col-md-2">
+        <img src="img/assets/car-logo9.png" alt=""/>
+      </div>
+      <div class="col-md-2">
+        <img src="img/assets/car-logo10.png" alt=""/>
+      </div>
+      <div class="col-md-2">
+        <img src="img/assets/car-logo11.png" alt=""/>
+      </div>
+      <div class="col-md-2">
+        <img src="img/assets/car-logo12.png" alt=""/>
+      </div>
+    </div>
+  </div> <!-- Company End !-->
+  <div class="row clearfix contact" id="call-me-now">
+    <h1 class="font-hnl">Join over 10,000 customers who are already using Autobody</h1>
+    <p class="font-hn">Leave your details and we will call you back!</p>
+    <div class="col-md-10 col-md-offset-1">
+      <form ng-submit="vm.contact(vm.contactForm.$valid)" method="post" name="vm.contactForm">
+        <div class="col-md-3">
+          <input type="text" placeholder="Your Name" ng-model="vm.contact_name" ng-required="true"/>
+        </div>
+        <div class="col-md-3">
+          <input type="email" placeholder="Your Email" ng-model="vm.contact_email" ng-required="true"/>
+        </div>
+        <div class="col-md-3">
+          <input type="text" placeholder="Your Number" ng-model="vm.contact_number" ng-required="true"/>
+        </div>
+        <div class="col-md-3">
+          <div class="col-md-10 col-md-offset-1">
+            <button type="submit">CALL ME NOW</button>
+          </div>
+        </div> 
+      </form>   
+    </div>
+  </div> <!-- Contact End !-->
+</div> <!-- Main Home End !-->

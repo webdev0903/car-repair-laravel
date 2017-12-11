@@ -1,0 +1,203 @@
+#front-step5-page{
+    .front-step5-div6::-webkit-scrollbar {
+        width: 0.7em;
+    }
+     
+    .front-step5-div6::-webkit-scrollbar-track {
+        box-shadow: none;
+        background-color: #f6fafd;
+    }
+     
+    .front-step5-div6::-webkit-scrollbar-thumb {
+      background-color: #a3c0e1;
+      outline: none;
+    }
+
+    .front-step5-div1 {
+    	height: auto;
+    	position: relative;
+        padding: 0px;
+        width: 100%;
+    }
+
+    .front-step5-div2 {
+    	background-color: #ECEFF3;
+    	height: 100%;
+    	position: absolute;
+    	top: 0px;
+    	left: 0px;
+    	opacity: 0.9;
+        width: 100%;
+    }
+
+    .front-step5-div3 {
+    	background-color: #D2D8E0;
+    	height: 100%;
+    	text-align: center;
+    }
+
+    .front-step2-div11 {
+        padding-left: 0px;
+        padding-bottom: 10px;
+    }
+
+    .front-step2-h5 {
+        margin-bottom: 0px;
+        font-weight: bold;
+        color: #2a2f3a;
+        font-size: 13px;
+        font-family: "HEL_Neue_LTSTD", sans-serif !important;
+    }
+
+    .front-step5-div4 {
+        background-color: #fff;
+        opacity: 0.99;
+        height: 90%;
+        width: 940px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .front-step5-div5 {
+        background-image: url(/img/assets/summary_bg.png);
+        background-size: 100% 100%;
+        width: 100%; 
+        height:170px;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 170px;
+    }
+
+    .front-step5-div6 {
+        border-right-width: 1px;
+        border-right-color: lightgrey;
+        border-right-style: solid;
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    .front-step5-div7 {
+        background-image: url(/img/assets/confirm.png);
+        background-size: 100% 100%;
+        width: 143px; 
+        height: 32px;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 32px;
+        color: #fff;
+        font-size: 13px;
+    }
+
+    .front-step5-h4 {
+    	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        font-weight: lighter;
+        color: #4D94D0;
+    }
+
+    .front-step5-input {
+        width: 100%;
+        padding-left: 15px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-right: 15px;
+        border-radius: 6px;
+        border-color: lightgrey;
+        border-width: 1px;
+        background-color: transparent;
+        border-style: solid;
+        margin: 15px auto;
+    }
+
+    .front-step5-tr {
+    	height: 60px;
+    }
+
+    .front-step5-timediv {
+        width: 100%;
+        height: 40px;
+        background-color: #E0F0FF;
+        color: #6A7F90;
+        text-align: center;
+        line-height: 40px;
+        cursor: pointer;
+    }
+
+    .front-step5-timediv-selected {
+        width: 100%;
+        height: 40px;
+        background-color: #4D94D0;
+        color: #FFF;
+        text-align: center;
+        line-height: 40px;
+        cursor: pointer;
+    }
+
+    .front-step5-date {
+        width: 50%;
+        padding-left: 15px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-right: 15px;
+        border-radius: 6px;
+        border-color: lightgrey;
+        border-width: 1px;
+        background-color: transparent;
+        border-style: solid;
+        margin: 15px auto;
+    }
+
+    .front-step5-time {
+        width: 15%;
+        padding-left: 15px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-right: 15px;
+        border-radius: 6px;
+        border-color: lightgrey;
+        border-width: 1px;
+        background-color: transparent;
+        border-style: solid;
+        margin: 15px auto;
+        text-align: center;
+    }
+
+    @media screen and (max-width: 1139px){
+        height: auto !important;
+        .front-step5-div1{
+            #content-pack{
+                width: 100% !important;
+                height: auto !important;
+                top: 0 !important;
+                overflow: none !important;
+                #content-pack-left{
+                    overflow: none !important;
+                    width: 100% !important;
+                    display: block !important;
+                    .front-step5-div6{
+                        border: none !important;
+                    }
+                    border-bottom: 1px solid #efefef;
+                }
+                #content-pack-right{
+                    overflow: none !important;
+                    width: 100% !important;
+                    display: block !important;
+                    padding: 20px 0 !important;
+                    .col-md-12{
+                        width: 100% !important;
+                        .col-md-6, .col-md-12{
+                            padding: 0 !important;
+                            width: 100% !important;
+                        }
+                    }
+                }
+                tbody{
+                    display: block !important;
+                }
+                tr.condCon{
+                    display: block !important;
+                }
+            }
+        }
+    }
+}

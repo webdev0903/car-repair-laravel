@@ -1,0 +1,121 @@
+<script type="text/ng-template" id="myModalContent.html">
+  <div class="modal-header">
+    <h3 class="modal-title">Create Service Report</h3>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+		<label>Write Report Description here</label>
+		<textarea class="form-control" rows="5" ng-model="mvm.description" autofocus></textarea>
+	</div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="mvm.ok()">Create</button>
+    <button class="btn btn-warning" type="button" ng-click="mvm.cancel()">Cancel</button>
+  </div>
+</script>
+
+<script type="text/ng-template" id="advisorContent.html">
+  <div class="modal-header">
+    <h3 class="modal-title">AssignAdvisor</h3>
+  </div>
+  <div class="modal-body">
+	<div class="box-body table-responsive">
+	  <table class="table table-hover">
+	    <tr>
+	      <th>Advisor Name</th>
+	      <th>Open Appointments</th>
+	      <th>Total</th>
+	    </tr>
+	    
+	    <tr ng-repeat="advisor in mvm.advisors" ng-click="mvm.ok(advisor.id)">
+	      <td>{{advisor.name}}</td>
+	      <td>{{advisor.open}}</td>
+	      <td>{{advisor.total}}</td>
+	    </tr>
+	  </table>
+	</div>
+  </div>
+  <div class="modal-footer">
+   <button class="btn btn-warning" type="button" ng-click="mvm.cancel()">Close</button>
+  </div>
+</script>
+
+<section class="content-header">
+  <h1>Appointment Detail</h1>
+  <ol class="breadcrumb">
+    <li><a ui-sref="app.carappointmentlists">Appointments</a></li>
+    <li class="active"># {{vm.appointmentId}}</li>
+  </ol>
+</section>
+<section class="content">	
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title">Appointment # {{vm.appointmentId}}</h3>
+        	
+          <div class="box-tools pull-right">
+            <a ui-sref="app.carappointmentreport({appointmentId: {{vm.appointmentId}}})" class="btn btn-block btn-success btn-xs" ng-if="vm.appointment.data.status.includes('Open') && !vm.role.includes('super')"><i class="fa fa-plus"></i> Create Service Report</a>
+
+            <a ui-sref="app.carappointmentaccept({appointmentId: {{vm.appointmentId}}})" ng-click="vm.onAcceptAppointment()" class="btn btn-block btn-success btn-xs" ng-if="vm.appointment.data.status.includes('New') && !vm.role.includes('super')"><i class="fa fa-plus"></i> Accept Appointment</a>
+            
+            <a ng-click="vm.onAssignAdvisor()" class="btn btn-block btn-success btn-xs" ng-if="!vm.appointment.data.status.includes('Closed') && vm.role.includes('super')"><i class="fa fa-plus"></i> Assign Advisor</a>
+          </div>
+        </div>
+        
+        
+        <div class="box-body table-responsive">
+          <table class="table">
+          	<tr>
+          	  <td><b>Assigned Service Advisor :</b> {{vm.appointment.data.advisor}}</td>
+          	  <td><b>Status:</b> {{vm.appointment.data.status}}</td>
+          	</tr>
+          	
+          	<tr>
+        		  <td><b>Booked Date and Time :</b> {{vm.appointment.data.book_time}}</td>
+        		  <td><b>Accepted Date and Time :</b> {{vm.appointment.data.accept_time}}</td>
+        		</tr>
+
+        		<tr>
+      			  <td><b>Customer Name :</b> {{vm.appointment.data.customer}}</td>
+      			  <td><b>Customer Phone :</b> {{vm.appointment.data.phone_number}}</td>
+      			</tr>
+  			
+      			<tr>
+      			  <td><b>Customer Email Address :</b> {{vm.appointment.data.email}}</td>
+      			  <td><b>Car :</b> {{vm.appointment.data.make}}&nbsp;{{vm.appointment.data.year}}&nbsp;{{vm.appointment.data.model}}&nbsp;{{vm.appointment.data.trim}}</td>
+      			</tr>
+
+            <tr>
+              <td colspan="2"><b>Appointment Times :</b> {{vm.appointmentTime}}</td>
+            </tr>
+    	  </table>
+          	
+          <table class="table table-hover">
+          	<tr>
+              <th width="2%"></th>
+              <th></th>
+              <th></th>
+              <th>Total: {{vm.getTotal()}}</th>
+            </tr>
+            
+            <tr>
+              <th></th>
+            	<th>Main Service</th>
+            	<th>Sub Service</th>
+            	<th>Price</th>
+            </tr>
+            
+            <tr ng-repeat="service in vm.services">
+              <td><img src="/img/assets/checked.png" ng-show="service.selected == 1"/></td>
+              <td>{{service.main}} </td>
+              <td>{{service.sub}} </td>
+              <td>{{service.price}}</td>
+              
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

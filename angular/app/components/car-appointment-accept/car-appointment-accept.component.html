@@ -1,0 +1,183 @@
+<section class="content">
+  <div class="accept-form">
+    <img id="logo" src="img/assets/logo-small.png"/>
+    <h1 class="title letterSpacing font-hnl">Gargash Auto Body</h1>
+    <p class="subtitle letterSpacing font-hnl">Vehicle Receiving Form</p>
+    <form ng-submit="vm.accept(vm.acceptForm.$valid)" method="post" name="vm.acceptForm" enctype="multipart/form-data">
+      <div class="top-row clearfix">
+        <div class="col-md-4">
+          <div class="col-md-10 col-md-offset-1">
+            <span class="font-hnLT font-bold">Job No</span>
+            <input type="text" class="form-control" name="jobno" ng-model="vm.jobno" ng-required="true">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-10 col-md-offset-1">
+            <span class="font-hnLT font-bold">Date</span>
+            <input type="text" class="form-control" name="date" ng-model="vm.date" ng-required="true">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-10 col-md-offset-1">
+            <span class="font-hnLT font-bold">Time</span>
+            <input type="text" class="form-control" name="time" ng-model="vm.time" ng-required="true">
+          </div>
+        </div>
+      </div> <!-- Top Row End !-->
+      <div class="row middle-row">
+        <div class="col-md-4">
+          <div class="col-md-10 col-md-offset-1">
+            <span class="font-hnLT font-bold">Customer</span>
+            <input type="text" class="form-control" name="customer" ng-model="vm.customer" ng-required="true">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-10 col-md-offset-1">  
+            <span class="font-hnLT font-bold">VIN</span>
+            <input type="text" class="form-control" name="vin" ng-model="vm.vin" ng-required="true">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-10 col-md-offset-1">
+            <span class="font-hnLT font-bold">Advisor</span>
+            <input type="text" class="form-control" name="advisor" ng-model="vm.advisor" ng-required="true">
+          </div>
+        </div>
+      </div> <!-- Row End !-->
+      <div class="row middle-row">
+        <div class="col-md-4">
+          <div class="col-md-10 col-md-offset-1">  
+            <span class="font-hnLT font-bold">Telephone</span>
+            <input type="text" class="form-control" name="telephone" ng-model="vm.telephone" ng-required="true">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-10 col-md-offset-1">
+            <span class="font-hnLT font-bold">Model/Year</span>
+            <input type="text" class="form-control" name="model" ng-model="vm.model" ng-required="true">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-10 col-md-offset-1">  
+            <span class="font-hnLT font-bold">KM</span>
+            <input type="text" class="form-control" name="km" ng-model="vm.km" ng-required="true">
+          </div>
+        </div>
+      </div> <!-- Row End !-->
+      <div class="row middle-row">
+        <div class="col-md-4">
+          <div class="col-md-10 col-md-offset-1">
+            <span class="font-hnLT font-bold">Email Id</span>
+            <input type="email" class="form-control" name="email" ng-model="vm.email" ng-required="true"s>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-10 col-md-offset-1">
+            <span class="font-hnLT font-bold">Plate No</span>
+            <input type="text" class="form-control" name="plate" ng-model="vm.plate" ng-required="true">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-10 col-md-offset-1">
+            <span class="font-hnLT font-bold">Fuel Leave</span>
+            <input type="text" class="form-control" name="fuel" ng-model="vm.fuel" ng-required="true">
+          </div>
+        </div>
+      </div> <!-- Row End !-->
+      <hr/>
+      <div class="row request-row">
+        <div class="col-md-6">
+          <img src="img/assets/shape1.png" alt=""/>
+          <span class="font-hn">Primary Request</span>
+          <textarea class="form-control" name="primaryreq" ng-model="vm.primaryreq" ng-required="true"></textarea>
+        </div>
+        <div class="col-md-6">
+          <img src="img/assets/shape2.png" alt=""/>
+          <span class="font-hn">Secondary Request</span>
+          <textarea class="form-control" name="secondaryreq" ng-model="vm.secondaryreq"></textarea>
+        </div>
+      </div> <!-- Row End !-->
+      <hr/>
+      <div class="row inspection">
+        <h3 class="font-hnLT font-bold">Vehicle Inspection Report</h3>
+        <div class="clearfix">
+          <div class="col-md-3 clearfix" ng-repeat="inspection in vm.inspection" style="position: relative;">
+            <input type="checkbox" name="inspection[]" ng-click="vm.toggleSelection(inspection.id)" checked="true"/>
+            <span class="font-hnLT font-bold">{{inspection.title}}</span>
+          </div>
+        </div>
+      </div> <!-- Inspection End !-->
+      <hr/>
+      <div class="row upload">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="btn-wrap">
+              <img src="img/assets/upload1.jpg" alt="" class="upload_image" id="image0"/>
+              <input type="file" onchange="angular.element(this).scope().fileNameChanged(this, 0)"/>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="btn-wrap">
+              <img src="img/assets/upload2.jpg" alt="" class="upload_image" id="image1"/>
+              <input type="file" onchange="angular.element(this).scope().fileNameChanged(this, 1)"/>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="btn-wrap">
+              <img src="img/assets/upload3.jpg" alt="" class="upload_image" id="image2"/>
+              <input type="file" onchange="angular.element(this).scope().fileNameChanged(this, 2)"/>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="btn-wrap">
+              <img src="img/assets/upload4.jpg" alt="" class="upload_image" id="image3"/>
+              <input type="file" onchange="angular.element(this).scope().fileNameChanged(this, 3)"/>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="btn-wrap">
+              <img src="img/assets/upload5.jpg" alt="" class="upload_image" id="image4"/>
+              <input type="file" onchange="angular.element(this).scope().fileNameChanged(this, 4)"/>
+            </div>
+          </div>
+        </div>
+        <p class="font-hn">We kindly request that variables should not to be left insde the vehicle</p>
+      </div> <!-- Upload End !-->
+      <hr/>
+      <div class="row sign">
+        <div class="col-md-6">
+          <div class="row">
+            <img src="img/assets/head.png" alt=""/>
+            <div class="signpack">
+              <span class="font-hn">Customer/Representative Signature</span>
+              <signature-pad accept="sign1" clear="clear1" width="300" height="150"></signature-pad>
+              <div class="signbutton">
+                <button type="button" class="btn btn-primary" ng-click="clear1()">Clear</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <img src="img/assets/head.png" alt=""/>
+            <div class="signpack">
+              <span class="font-hn">Service Advisor Signature</span>
+              <signature-pad accept="sign2" clear="clear2" width="300" height="150"></signature-pad>
+              <div class="signbutton">
+                <button type="button" class="btn btn-primary" ng-click="clear2()">Clear</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- Sign End !-->
+      <hr/>
+      <div class="row">
+      <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form> <!-- Form End !-->
+  </div>
+</section>

@@ -1,0 +1,148 @@
+<section class="content"> 
+  <div class="front-report-form" ng-init="show=false">
+    <div class="diff-back">
+    <div class="row top-intro">
+      <p class="font-hnl"><span>MILEAGE</span> {{vm.accept.km}}<span class="space"></span><span>CREATED</span> {{vm.report.time}}</p>
+    </div>
+    <h1 class="title font-hnLTl letterSpacing">Inspection Report for <span>{{vm.accept.model}}</span></h1>
+    <h2 class="subtitle font-hnl">This report was prepared by <span>{{vm.accept.advisor}}</span></h2>
+    <div class="row score" ng-hide="show">
+      <div class="col-md-4 col-md-offset-4">
+        <h1 class="font-hnLTl">Score</h1>
+      </div>
+      <div class="customClear"></div>
+      <div class="score-panel">
+        <img src="img/bigcircle.jpg" alt=""/>
+        <div class="score-box font-hnl" style="transform: rotate(
+        {{vm.rotate}}deg)">
+          <div style="transform: rotate(-{{vm.rotate}}deg)">{{vm.report.score}}%</div>
+        </div>
+      </div> <!-- Score Panel End !-->
+    </div> <!-- Score End !-->
+    <div class="row score rem" ng-show="show">
+      <div class="col-md-4 col-md-offset-4">
+        <h1 class="font-hnLTl">Recommendations</h1>
+      </div>
+      <div class="customClear"></div>
+      <div class="score-panel">
+        <img src="img/carrem.jpg" alt=""/>
+        <div class="urgent-pack">
+          <div class="one-circle big poor"></div><span>{{vm.report.urgent}}</span>
+        </div>
+        <div class="required-pack">
+          <div class="one-circle big fair"></div><span>{{vm.report.required}}</span>
+        </div>
+        <div class="recommended-pack">
+          <div class="one-circle big good"></div><span>{{vm.report.recommended}}</span>
+        </div>
+      </div> <!-- Score Panel End !-->
+    </div> <!-- Score End !-->
+    </div> <!-- Diff Back End !-->
+    <div class="tab-nav">
+      <span ng-class="show==true?'active font-hn':'font-hnl'" ng-click="show=true">Recommendations</span>
+      <span ng-class="show==false?'active font-hn':'font-hnl'" ng-click="show=false">Report</span>
+    </div><!-- Tab Nav End !-->
+    <div ng-show="show" class="recommendation-tab">
+      <div class="row intro">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="col-md-4">
+            <div class="one-circle poor"></div>
+            <span class="font-hnLT font-bold">Urgent</span>
+          </div>
+          <div class="col-md-4">
+            <div class="one-circle fair"></div>
+            <span class="font-hnLT font-bold">Required</span>
+          </div>
+          <div class="col-md-4">
+            <div class="one-circle good"></div>
+            <span class="font-hnLT font-bold">Recommended</span>
+          </div>
+        </div>
+      </div><!-- Intro End !-->
+      <hr/>
+      <div class="row services clearfix">
+        <div class="col-md-4 one-service" ng-repeat="service in vm.report.service track by $index">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="one-circle {{service.class}}"></div>
+            <img ng-show="{{vm.report.status==1?false:true}}" ng-click="vm.onSelectService(service)" src="img/assets/{{service.selected == 1 ? 'checked' : 'add'}}.png" alt=""/>
+            <h1 class="font-hn">{{service.title}}</h1>
+            <p class="font-hn">{{service.description}}</p>
+            <span class="font-hnLT">AED {{service.price}}</span>
+          </div>
+        </div>
+      </div><!-- Services End !-->
+      <hr/>
+      <div class="row total">
+        <p class="font-hnl">YOUR ESTIMATED TOTAL PRICE</p>
+        <span class="font-hn">{{vm.total}} AED</span>
+      </div>
+      <div class="row">
+        <form ng-submit="vm.repair(vm.repairForm.$valid)" method="post" name="vm.repairForm">
+          <button ng-show="vm.report.status==1?false:true" type="submit" class="btn btn-primary font-hnbd">Start Car Repair</button>
+        </form>
+      </div>
+    </div><!-- Recommendation Tab End !-->
+    <div ng-hide="show" class="report-tab">
+      <div class="row intro">
+        <div class="col-md-8 col-md-offset-2 clearfix">
+          <div class="col-md-4">
+            <div class="one-circle poor"></div>
+            <div class="one-circle"></div>
+            <div class="one-circle"></div>
+            <span class="font-hnLT font-bold">Poor</span>
+          </div>
+          <div class="col-md-4">
+            <div class="one-circle fair"></div>
+            <div class="one-circle fair"></div>
+            <div class="one-circle"></div>
+            <span class="font-hnLT font-bold">Fair</span>
+          </div>
+          <div class="col-md-4">
+            <div class="one-circle good"></div>
+            <div class="one-circle good"></div>
+            <div class="one-circle good"></div>
+            <span class="font-hnLT font-bold">Good</span>
+          </div>
+        </div>
+      </div> <!-- Intro End !-->
+      <hr/>
+      <div class="row one-aspect" ng-repeat="aspect in vm.report.aspect" ng-init="aspect_show=false">
+        <div class="col-md-10 col-md-offset-1 clearfix">
+          <div class="one-aspect-header clearfix" ng-click="aspect_show==true?aspect_show=false:aspect_show=true">
+            <h1 class="customLeft font-hnl">{{aspect.title}}</h1>
+            <div class="customRight dropdown">
+              <img src="/img/assets/dropdown_{{aspect_show}}.png" alt=""/>  
+            </div>
+            <div class="customRight circle-box" ng-init="count=aspect.status;">
+              <div class="one-circle" ng-class="{poor:count==1, fair:count==2, good:count==3}"></div>
+              <div class="one-circle" ng-class="{good:count==3,fair:count==2,'':count==1}" ></div>
+              <div class="one-circle" ng-class="count==3?'good':''"></div>
+            </div>
+          </div><!-- One Aspect Header End !-->
+          <div class="one-aspect-table" ng-repeat="detail in aspect.detail" ng-show="aspect_show">
+          <table>
+            <thead>
+              <tr>
+              <th class="font-hnl">{{detail.heading}}</th>
+              <th class="font-hnl">POOR</th>
+              <th class="font-hnl">FAIR</th>
+              <th class="font-hnl">GOOD</th>
+              <th class="font-hnl">NOTES &amp; ADVICE FROM MECHANIC</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="sub in detail.sub">
+                <td class="font-hnl" width="25%">{{sub.title}}</td>
+                <td class="font-hnl" width="10%" align="center"><div class="one-circle" ng-class="sub.status==1?'poor':''"></div></td>
+                <td class="font-hnl" width="10%" align="center"><div class="one-circle" ng-class="sub.status==2?'fair':''"></div></td>
+                <td class="font-hnl" width="10%" align="center"><div class="one-circle" ng-class="sub.status==3?'good':''"></div></td>
+                <td class="font-hnl">{{sub.note}}</td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </div><!-- One Aspect End !-->
+    </div><!-- Report Tab End !-->
+  </div> <!-- Report Form End !-->
+</section>

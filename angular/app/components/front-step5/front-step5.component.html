@@ -1,0 +1,135 @@
+<div class="front-main" id="step5-top">
+<section class="content" id="front-step5-page" style="padding: 0px !important;">
+  <table style="width: 100%; height: 100%;">
+    <tr>
+      <td>
+        <div class="front-step5-div1 ">
+          <div class="front-step5-div2"></div>
+          <table id="content-pack" width="940px" style="margin: 0 auto; padding-top: 30px; padding-bottom: 30px; position: relative; display: block">
+            <tr height="170px" style="display: block; width: 100%">
+              <td style="display: block;">
+                <div class="col-lg-12 front-step5-div5">
+                  <table width="100%" height="100%">
+                    <tr>
+                      <td width="40%" style="text-align: right;">
+                        <img src="/img/assets/summary.png"/>
+                      </td>
+                      <td width="20%" style="text-align: center;">
+                        <h5 style="color: #fff;">Estimated Cost</h5>
+                        <h2 style="margin: 0 !important; color: #fff;">AED {{vm.totalPrice}}</h2>
+                      </td>
+                      <td width="40%">
+                        
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+            </tr>
+            <tr style="background-color: #fff; opacity: 0.99; display: block">
+              <td style="display: block" class="clearfix">
+                <div class="col-md-12" style="height: auto; padding-top: 50px; padding-bottom: 30px;">
+                    <table width="100%" height="100%">
+                      <tr class="condCon">
+                        <td width="30%" class="clearfix" id="content-pack-left">
+                          <div class="col-md-12 front-step5-div6" style="direction: rtl">
+                            <div style="direction: ltr">
+                            <h5 class="font-hnLT" style="color:#223345; font-size:18px; font-weight:bold;">Summary</h5>
+                            <h6 style="color: #839DB0">{{vm.car.year}}&nbsp;{{vm.car.make}}&nbsp;{{vm.car.model}}&nbsp;{{vm.car.trim}}</h6>
+                            <h5 class="front-step2-h5" ng-show="vm.services.length > 0">Services</h5>
+                            <div class="front-step2-div11">
+                              <div ng-repeat="service in vm.services" style="display: block; width: 100%; margin:15px 0; position: relative;">
+                                  <a style="cursor: pointer; position: absolute; top:0; left:0; display:block;margin-top:-3px;" ng-click="vm.toggleSubService(service)"><img src="/img/assets/{{service.added == 1 ? 'toggle_on' : 'toggle_off'}}.png"/></a>
+                                  <h6 style="color: #839DB0; padding: 0 65px 0 38px; margin:0;">{{service.title}}</h6>
+                                  <h6 style="color: #3c8dbc; width:60px; position:absolute; top:0;right:0; margin:0; text-align: right;">AED {{service.price}}</h6>
+                              </div>
+                            </div>
+
+                            <h5 class="front-step2-h5" ng-show="vm.optionServices.length > 0">Optional Services</h5>
+                            <div class="front-step2-div11">
+                              <div ng-repeat="optionService in vm.optionServices" style="display: block; width: 100%; margin:15px 0; position: relative;">
+                                <a style="cursor: pointer; position: absolute; top:0; left:0; display:block;margin-top:-3px;" ng-click="vm.toggleOptionService(optionService)"><img src="/img/assets/{{optionService.added == 1 ? 'toggle_on' : 'toggle_off'}}.png"/></a>
+                                <h6 style="color: #839DB0; padding: 0 65px 0 38px; margin:0;">{{optionService.title}}</h6>
+                                <h6 style="color: #3c8dbc; width:60px; position:absolute; top:0;right:0; margin:0; text-align: right">AED {{optionService.price}}</h6>
+                              </div>
+                            </div>
+
+                            <h5 class="front-step2-h5">Include</h5>
+                            <div class="col-lg-12 front-step2-div11">
+                              <table width="100%">
+                                <tr ng-repeat="freeService in vm.freeServices">
+                                  <td style="width: 75px;">
+                                    <img src="/img/assets/free.png"/>
+                                  </td>
+                                  <td style="text-align: left;">
+                                    <h6 style="color: #839DB0">{{freeService.title}}</h6>
+                                  </td>
+                                </tr>
+                              </table>
+                            </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td width="70%" style="vertical-align: top;" id="content-pack-right" class="clearfix">
+
+                          <div class="col-md-12">
+                            <div class="col-md-6">
+                              <h6 style="margin: 0 !important;color: #6A7F90;" ng-show="vm.isPhone == true">Mobile number</h6>
+                              <h6 style="margin: 0 !important;color: #ee0000;" ng-show="vm.isPhone == false">Mobile number</h6>
+                              <input type="text" class="front-step5-input" placeholder="" value="" ng-model="vm.phonenumber" ng-change="vm.changeInput(0)"/>
+                            </div>
+                            <div class="col-md-6">
+                              <h6 style="margin: 0 !important;color: #6A7F90;" ng-show="vm.isEmail == true">Email address</h6>
+                              <h6 style="margin: 0 !important;color: #ee0000;" ng-show="vm.isEmail == false">Email address</h6>
+                              <input type="text" class="front-step5-input" placeholder="" value="" ng-model="vm.email" ng-change="vm.changeInput(1)"/>
+                            </div>
+                            <div class="col-md-6">
+                              <h6 style="margin: 0 !important;color: #6A7F90;" ng-show="vm.isName == true">Your name</h6>
+                              <h6 style="margin: 0 !important;color: #ee0000;" ng-show="vm.isName == false">Your name</h6>
+                              <input type="text" class="front-step5-input" placeholder="" value="" ng-model="vm.name" ng-change="vm.changeInput(2)"/>
+                            </div>
+                            <div class="col-md-6">
+                              <h6 style="margin: 0 !important;color: #6A7F90;">Preferred Contact Method</h6>
+                              <select class="front-step5-input" style="height: 40px;" id="contactMethod">
+                                <option value="0">Email</option>
+                                <option value="1">Mobile Number</option>
+                              </select>
+                            </div>
+                            <div class="col-md-12">
+                              <h6 style="margin: 0 !important;color: #6A7F90;">Anything you want to tell us?</h6>
+                              <textarea rows="2" class="front-step5-input" ng-model="vm.anything"></textarea>
+                            </div>
+                            <div class="col-md-12">
+                              <a ng-click="vm.onConfirm();" style="cursor: pointer;">
+                                <div class="front-step5-div7">
+                                  Confirm Booking
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+    <tr class="front-step5-tr">
+      <td>
+        <div class="col-lg-12 front-step5-div3">
+          <a ui-sref="front.step1"><span class="front-span-passed">&nbsp;</span></a>
+          <a ui-sref="front.step2"><span class="front-span-passed">&nbsp;</span></a>
+          <a ui-sref="front.step3"><span class="front-span-passed">&nbsp;</span></a>
+          <a ui-sref="front.step4"><span class="front-span-passed">&nbsp;</span></a>
+          <span class="front-span-active"><span class="triangle"></span>5</span>
+        </div>
+      </td>
+    </tr>
+  </table> 
+</section>
+</div>

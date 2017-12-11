@@ -1,0 +1,82 @@
+<header class="main-header background-white-color" style="position: relative;">
+  <a href="/" class="front-logo" id="top">
+    <img src="img/assets/logo-small.png"/>
+  </a>
+  <nav class="navbar navbar-static-top front-header-navbar">
+    <div class="col-md-12 front-home-nav-div">
+      <table width="100%">
+        <tr>
+          <td width="100px">
+            <a ng-href="/#/#why-us">
+              <h5>WHY US?</h5>
+            </a>
+          </td>
+          <td width="140px">
+            <a ng-href="/#/#how-it-works">
+              <h5>HOW IT WORKS</h5>
+            </a>
+          </td>
+          <td width="100px">
+            <a ng-href="/#/#services">
+              <h5>SERVICES</h5>
+            </a>
+          </td>
+          <td width="100px">
+            <a ng-href="/#/#customers">
+              <h5>CUSTOMERS</h5>
+            </a>
+          </td>
+          <td>
+            <a ng-href="/#/#call-me-now">
+              <h5 style="text-align: right;color: #6A7F90 !important;">CALL ME NOW</h5>
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="col-md-12 front-home-nav-mobile-div">
+      <img src="/img/assets/mobile_menu.png" style="width: 30px; cursor: pointer;" ng-click="vm.toggleMenu()" />
+    </div>
+
+  </nav>
+  <div class="front-home-nav-mobile-menu" id="mobile_menu">
+    <table width="100%">
+      <tr>
+        <td width="100px" class="front-home-nav-mobile-menu-td">
+          <a ng-href="/#/#why-us">
+            <h5 class="front-home-nav-mobile-menu-h5" ng-click="vm.toggleMenu()">WHY US?</h5>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td width="140px" class="front-home-nav-mobile-menu-td">
+          <a ng-href="/#/#how-it-works">
+            <h5 class="front-home-nav-mobile-menu-h5" ng-click="vm.toggleMenu()">HOW IT WORKS</h5>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td width="100px" class="front-home-nav-mobile-menu-td">
+          <a ng-href="/#/#services">
+            <h5 class="front-home-nav-mobile-menu-h5" ng-click="vm.toggleMenu()">SERVICES</h5>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td width="100px" class="front-home-nav-mobile-menu-td">
+          <a ng-href="/#/#customers">
+            <h5 class="front-home-nav-mobile-menu-h5" ng-click="vm.toggleMenu()">CUSTOMERS</h5>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="front-home-nav-mobile-menu-td">
+          <a ng-href="/#/#call-me-now" style="color: #6A7F90;">
+            <h5 class="front-home-nav-mobile-menu-h5" style="color: #6A7F90;" ng-click="vm.toggleMenu()">CALL ME NOW</h5>
+          </a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</header>

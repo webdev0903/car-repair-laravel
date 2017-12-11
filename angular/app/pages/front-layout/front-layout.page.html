@@ -1,0 +1,13 @@
+<div ui-view="header"></div>
+<div class="content-wrapper">
+    <div ui-view="main"></div>
+</div>
+<div ui-view="footer"></div>
+<div style="width: 100%; height: 100%;position: absolute;top:0px;left:0px;opacity: 0;display: none;" id="toggle_menu_bg" onclick="hideMenu()">
+</div>
+<script type="text/javascript">
+	function hideMenu() {
+		document.getElementById('mobile_menu').style.display = 'none';
+  		document.getElementById('toggle_menu_bg').style.display = 'none';
+	}
+</script>

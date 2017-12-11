@@ -1,0 +1,66 @@
+@font-face{
+	font-family: 'HEL_Neue_Light';
+	src: url("../fonts/main/HelveticaNeue-Light.otf") format("opentype");
+}
+@font-face{
+	font-family: 'HEL_Neue_Bold';
+	src: url("../fonts/main/HelveticaNeue-Bold.otf") format("opentype");
+}
+@font-face{
+	font-family: 'HEL_Neue_LTSTD_Light';
+	src: url("../fonts/main/HelveticaNeueLTStd-Lt.otf") format("opentype");
+}
+@font-face{
+	font-family: 'HEL_Neue_LTSTD_Bd';
+	src: url("../fonts/main/HelveticaNeueLTStd-Bd.otf") format("opentype");
+}
+@font-face{
+	font-family: 'HEL_Neue';
+	src: url("../fonts/main/HelveticaNeue_0.ttf") format("truetype");
+}
+@font-face{
+	font-family: 'HEL_Neue_LTSTD';
+	src: url("../fonts/main/HeveticaNeueLTstd.otf") format("opentype");
+}
+@font-face{
+	font-family: 'LATO_Light';
+	src: url("../fonts/main/Lato-Light.ttf") format("truetype");
+}
+@font-face{
+	font-family: 'LATO_Regular';
+	src: url("../fonts/main/Lato-Regular.ttf") format("truetype");
+}
+
+.font-hnbd{ font-family: "HEL_Neue_Bold", sans-serif !important; }
+.font-hnl{ font-family: "HEL_Neue_Light", sans-serif !important; }
+.font-hnLTl{ font-family: "HEL_Neue_LTSTD_Light", sans-serif !important; }
+.font-hnLTbd{ font-family: "HEL_Neue_LTSTD_Bd", sans-serif !important; }
+.font-hn{ font-family: "HEL_Neue", sans-serif !important; }
+.font-hnLT{ font-family: "HEL_Neue_LTSTD", sans-serif !important; }
+.font-lb{ font-family: "LATO_Light"; }
+.font-lr{ font-family: "LATO_Regular"; }
+.font-bold { font-weight: bold; }
+
+body{
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	letter-spacing: 1px;
+}
+
+div {
+	-webkit-overflow-scrolling: touch;
+}
+
+.letterSpacing{ letter-spacing: 2px;}
+.customLeft{ float: left; }
+.customRight{ float: right; }
+.customClear{ clear: both; }
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.row{
+	margin-right: 0 !important;
+	margin-left: 0 !important;
+}

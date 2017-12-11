@@ -1,0 +1,320 @@
+#main-home{
+	background-color: #fff;
+	.front-main{
+		min-height: 90vh;
+	}
+	.home-try-div-con{
+		width: 800px;
+		min-height: 90px;
+		max-width: 100%;
+		margin: 250px auto;
+		position: relative;
+		background-color: rgba(255, 255, 255, 0.8);
+		padding: 10px 20px;
+		box-sizing: border-box;
+		h2{
+			color: #4d94d0;
+			font-size: 30px;
+			display: block;
+			float: left;
+			padding: 0;
+			margin: 0;
+			padding-top: 15px;
+		}
+		a{
+			float: right;
+			display: block;
+			width: 177px;
+			height: 37px;
+			color: #fff;
+			text-align: center;
+			line-height: 37px;
+			background: url(/img/assets/try_bg.png);
+			margin-top: 15px;
+			border-radius: 5px;
+		}
+		@media screen and (max-width: 900px){
+			width: 100%;
+			h2{
+				float: none !important;
+				text-align: center;
+			}
+			a{
+				float: none !important;
+				margin: 15px auto;
+			}
+		}
+	}
+	.top-intro{
+		margin-top: 50px;
+		padding-bottom: 50px;
+		.col-md-4{
+			text-align: center;
+			padding-bottom: 50px;
+			h1{
+				font-size: 16px;
+				color: #4d94d0;
+				padding: 0 10px;
+				font-weight: bold;
+			}
+			p{
+				font-size: 14px;
+				color: #78909c;
+				padding: 0 20px;
+			}
+		}
+	}
+	.device{
+		.col-md-6{
+			padding: 0;
+			img.ipad{
+				width: 100%;
+				border-radius: 0 10px 10px 0;
+			}
+		}
+		h1{
+			font-size: 32px;
+			color: #4d94d0;
+		}
+		ul{
+			list-style: none;
+			padding: 0 !important;
+			li{
+				position: relative;
+				margin-top: 40px;
+				.number{
+					width: 40px;
+					height: 40px;
+					text-align: center;
+					line-height: 40px;
+					border-radius: 5px;
+					box-sizing: border-box;
+					border: 1px solid #6076cd;
+					position: absolute;
+					top: 0;
+					left: 0;
+					color: #6076cd;
+					font-size: 14px;
+				}
+				h2{
+					margin: 0 !important;
+					padding: 0 0 0 60px;
+					font-size: 14px;
+					color: #6079d3;
+				}
+				p{
+					margin: 0 !important;
+					padding: 10px 0 0 60px;
+					font-size: 14px;
+					color: #6a7f90;
+				}
+				.try-button{
+					color: #fff;
+					margin: 30px 0 30px 60px;
+					display: block;
+					background: url(/img/assets/try_bg.png);
+					background-color: transparent;
+					font-size: 12px;
+					font-weight: bold;
+					width: 150px;
+					height: 37px;
+					line-height: 37px;
+					text-align: center;
+					cursor: pointer;
+					border-radius: 5px;
+				}
+			}
+		}
+		@media screen and (max-width: 1139px){
+			.try-button{
+				margin: 30px auto !important;
+			}
+		}
+	}
+	.service{
+		margin-bottom: 100px;
+		h1{
+			text-align: center;
+			font-size: 32px;
+			color: #4d94d0;
+			padding-top: 70px;
+			padding-bottom: 30px;
+		}
+		.front-step1-span-service{
+			box-shadow: 0px 0px 15px -5px #000;
+			font-size: 16px;
+		}
+		@media screen and (max-width: 1023px){
+			.front-step1-div5{
+				width: 480px !important;
+				margin: 0 auto !important;
+				.front-step1-span-service{
+					box-sizing: border-box !important;
+				}
+			}	
+		}
+		@media screen and (max-width: 479px){
+			.front-step1-div5{
+				width: 100% !important;
+				.front-step1-span-service{
+					display: block !important;
+					margin: 40px auto !important;
+				}
+			}	
+		}
+	}
+	.discuss{
+		background-image: url('/img/assets/discuss.jpg');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		width: 100%;
+		position: relative;
+		.discuss-inner{
+			background-color: rgba(100,135, 231, 0.6);
+			padding: 200px 0 200px 0;
+			text-align: center;
+			color: #fff;
+			p{
+				font-size: 24px;
+				width: 700px;
+				max-width: 100%;
+				margin: 0 auto;
+				padding: 10px;
+			}
+			label{
+				font-size: 14px;
+			}
+		}
+		@media screen and (max-width: 737px){
+			.discuss-inner{
+				padding: 100px 0 !important;
+			}
+		}
+	}
+	.testimonial{
+		position: relative;
+		width: 100%;
+		margin-bottom: 100px;
+		.discuss-box{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			text-align: center;
+			margin-top: -35px;
+			.one-discuss{
+				display: inline-block;
+				width: 70px;
+				height: 70px;
+				border-radius: 70px;
+				border: 3px solid #fff;
+				box-sizing: border-box;
+				overflow: hidden;
+				margin: 0 5px;
+				img{
+					width: 100%;
+					cursor: pointer;
+				}
+			}
+		}
+		@media screen and (max-width: 500px){
+			.discuss-box{
+				margin-top: -25px !important;
+				.one-discuss{
+					width: 50px !important;
+					height: 50px !important;
+					border-radius: 50px !important;
+				}
+			}
+		}
+	}
+	.company{
+		p{
+			text-align: center;
+			font-size: 14px;
+			color: #6a7f90;
+			padding-bottom: 40px;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		div.col-md-2{
+			margin-bottom: 50px;
+		}
+		img{
+			display: block;
+			width: auto;
+			max-width: 100%;
+			height: 60px;
+			margin: 0 auto;
+			opacity: 0.3;
+		}
+		@media screen and (max-width: 1139px){
+			div.col-md-10{
+				width: 100% !important;
+				padding: 0 !important;
+				margin: 0 !important;
+				div.col-md-2{
+					width: 33.33% !important;
+					height: 100px !important;
+					padding: 0 !important;
+					margin: 0 !important;
+					float: left;
+					box-sizing: border-box !important;
+				}
+				img{
+					max-width: 100% !important;
+					height: auto !important;
+					max-height: 60px !important;
+				}
+			}
+		}
+	}
+	.contact{
+		background-color: #627fdd;
+		text-align: center;
+		color: #fff;
+		padding-bottom: 50px;
+		h1{
+			font-size: 32px;
+			padding-top: 30px;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		p{
+			font-size: 16px;
+			padding-bottom: 40px;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		input{
+			width: 100%;
+			height: 50px;
+			border: none;
+			border-radius: 50px;
+			box-sizing: border-box;
+			padding-left: 20px;
+			font-size: 14px;
+			color: #648aec;
+		}
+		input:focus{
+			outline: none;
+		}
+		button{
+			width: 100%;
+			height: 50px;
+			border: 2px solid #fff;
+			border-radius: 50px;
+			background: transparent;
+			color: #fff;
+			font-size: 14px;
+			line-height: 50px;
+			text-align: center;
+			padding: 0;
+			outline: none;
+		}
+		.col-md-3{
+			padding-bottom: 20px;
+		}
+	}
+}
